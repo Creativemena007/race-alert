@@ -12,7 +12,7 @@ export interface SendEmailOptions {
 export async function sendEmail({ to, subject, html, text }: SendEmailOptions) {
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Race Alert <alerts@racealert.run>',
+      from: 'Race Alert <onboarding@resend.dev>',
       to,
       subject,
       html,
