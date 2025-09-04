@@ -62,11 +62,11 @@ export const emailTemplates = {
         <div style="border-top: 1px solid #e5e7eb; padding-top: 20px; margin-top: 30px; color: #6b7280; font-size: 14px;">
           <p>
             You're receiving this email because you signed up for race registration alerts at 
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}" style="color: #2563eb;">Race Alert</a>.
+            <a href="https://race-alert-k3xe3dj3o-orezi-menas-projects.vercel.app" style="color: #2563eb;">Race Alert</a>.
           </p>
           <p>
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}/unsubscribe?email=${encodeURIComponent(subscriberEmail || '')}" style="color: #6b7280;">Unsubscribe</a> • 
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}" style="color: #6b7280;">Update Preferences</a>
+            <a href="https://race-alert-k3xe3dj3o-orezi-menas-projects.vercel.app/unsubscribe?email=${encodeURIComponent(subscriberEmail || '')}" style="color: #6b7280;">Unsubscribe</a> • 
+            <a href="https://race-alert-k3xe3dj3o-orezi-menas-projects.vercel.app" style="color: #6b7280;">Update Preferences</a>
           </p>
         </div>
       </div>
@@ -127,8 +127,8 @@ You're receiving this email because you signed up for race registration alerts a
             The Race Alert Team
           </p>
           <p>
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}/unsubscribe?email=${encodeURIComponent(subscriberEmail)}" style="color: #6b7280;">Unsubscribe</a> • 
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}" style="color: #6b7280;">Update Preferences</a>
+            <a href="https://race-alert-k3xe3dj3o-orezi-menas-projects.vercel.app/unsubscribe?email=${encodeURIComponent(subscriberEmail)}" style="color: #6b7280;">Unsubscribe</a> • 
+            <a href="https://race-alert-k3xe3dj3o-orezi-menas-projects.vercel.app" style="color: #6b7280;">Update Preferences</a>
           </p>
         </div>
       </div>
