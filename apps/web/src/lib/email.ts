@@ -34,7 +34,7 @@ export async function sendEmail({ to, subject, html, text }: SendEmailOptions) {
 
 // Email templates
 export const emailTemplates = {
-  raceRegistrationOpen: (raceName: string, raceUrl: string) => ({
+  raceRegistrationOpen: (raceName: string, raceUrl: string, subscriberEmail?: string) => ({
     subject: `🏃‍♂️ Registration just opened: ${raceName}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -62,11 +62,11 @@ export const emailTemplates = {
         <div style="border-top: 1px solid #e5e7eb; padding-top: 20px; margin-top: 30px; color: #6b7280; font-size: 14px;">
           <p>
             You're receiving this email because you signed up for race registration alerts at 
-            <a href="https://racealert.run" style="color: #2563eb;">Race Alert</a>.
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}" style="color: #2563eb;">Race Alert</a>.
           </p>
           <p>
-            <a href="#" style="color: #6b7280;">Unsubscribe</a> • 
-            <a href="#" style="color: #6b7280;">Manage Preferences</a>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}/unsubscribe?email=${encodeURIComponent(subscriberEmail || '')}" style="color: #6b7280;">Unsubscribe</a> • 
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}" style="color: #6b7280;">Update Preferences</a>
           </p>
         </div>
       </div>
@@ -85,7 +85,7 @@ You're receiving this email because you signed up for race registration alerts a
     `
   }),
 
-  welcomeEmail: (email: string, raceCount: number) => ({
+  welcomeEmail: (subscriberEmail: string, raceCount: number) => ({
     subject: '🎉 Welcome to Race Alert!',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -127,8 +127,8 @@ You're receiving this email because you signed up for race registration alerts a
             The Race Alert Team
           </p>
           <p>
-            <a href="#" style="color: #6b7280;">Unsubscribe</a> • 
-            <a href="#" style="color: #6b7280;">Manage Preferences</a>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}/unsubscribe?email=${encodeURIComponent(subscriberEmail)}" style="color: #6b7280;">Unsubscribe</a> • 
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://racealert.run'}" style="color: #6b7280;">Update Preferences</a>
           </p>
         </div>
       </div>

@@ -27,10 +27,17 @@ export default function SignupForm() {
       const data = await response.json()
 
       if (response.ok) {
-        setMessage({
-          type: 'success',
-          text: `Great! You're now subscribed to alerts for ${data.races_count} major marathons.`
-        })
+        if (data.isNewSubscriber) {
+          setMessage({
+            type: 'success',
+            text: `🎉 Welcome! You're now subscribed to alerts for ${data.races_count} major marathons.`
+          })
+        } else {
+          setMessage({
+            type: 'success',
+            text: `✅ You're already subscribed! We've updated your preferences for ${data.races_count} major marathons.`
+          })
+        }
         setEmail('')
       } else {
         setMessage({

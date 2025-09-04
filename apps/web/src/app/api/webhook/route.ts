@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
             .gte('sent_at', new Date(Date.now() - 60000).toISOString()) // Last minute
 
           if (!notificationError && notifications && notifications.length > 0) {
-            const template = emailTemplates.raceRegistrationOpen(raceData.name, raceData.url)
+            const template = emailTemplates.raceRegistrationOpen(raceData.name, raceData.url, notifications[0]?.recipient_email)
             
             // Send email to all recipients
             await sendEmail({
